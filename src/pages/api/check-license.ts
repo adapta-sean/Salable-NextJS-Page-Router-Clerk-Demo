@@ -30,6 +30,8 @@ export default async function handler(
                 }
             });
         const license = await response.json() as License;
+        console.log('license', license);
+
         return res.status(200).json({capabilities: license.capabilities});
     } catch (e) {
         console.log(e);

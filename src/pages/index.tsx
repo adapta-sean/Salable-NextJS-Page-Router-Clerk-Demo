@@ -14,7 +14,7 @@ export default function Home() {
         setCapabilities(null);
         return;
     }
-    fetch("/check-license")
+    fetch("/api/check-license")
         .then(response => response.json())
         .then(data => {
           console.log(data);
@@ -31,10 +31,10 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col py-6 px-24 ${inter.className}`}
     >
-      <h1>Salable NextJS Page Router + Iron Session Demo</h1>
+      <h1 className='text-2xl mb-4'>Salable NextJS Page Router + Clerk Demo</h1>
       {capabilities ? (
           <>
-            <h2>Capabilities</h2>
+            <h2 className='text-xl'>Capabilities</h2>
             <ul>
               {capabilities.map(capability => <li key={capability}>{capability}</li>)}
             </ul>

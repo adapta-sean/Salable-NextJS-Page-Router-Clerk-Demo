@@ -12,14 +12,13 @@ export default function App({Component, pageProps}: AppProps) {
                 <SignedOut>
                     <SignInButton
                         signUpForceRedirectUrl='http://localhost:3000/api/post-sign-up'
-                        forceRedirectUrl='http://localhost:3000/api/post-sign-in'
                     />
                 </SignedOut>
                 <SignedIn>
-                    <UserButton/>
-                    <SignOutButton
-                        redirectUrl='http://localhost:3000/api/post-sign-out'
-                    />
+                    <div className='flex gap-4'>
+                        <UserButton/>
+                        <SignOutButton/>
+                    </div>
                 </SignedIn>
             </div>
             <Component {...pageProps} />
